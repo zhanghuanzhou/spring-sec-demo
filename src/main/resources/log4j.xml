@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<param name="Threshold" value="DEBUG"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss.SSS} %X{reqId}  %5p %c{1}:%L - %m%n"/>
+		</layout>
+	</appender>
+
+	<logger name="org.springframework.beans">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.binding">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.jdbc">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.transaction">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.orm.jpa">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.security">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.mchange.v2">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.cccis">
+		<level value="debug" />
+	</logger>
+
+	<logger name="org.apache.cxf">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="jdbc.audit">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="jdbc.resultset">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="jdbc.connection">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="jdbc.resultsettable">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="jdbc.sqlonly">
+		<level value="ERROR" />
+	</logger>
+
+	<!--打印sql和执行时间-->
+	<logger name="jdbc.sqltiming">
+		<level value="INFO" />
+	</logger>
+
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="console" />
+	</root>
+</log4j:configuration>
